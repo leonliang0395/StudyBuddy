@@ -20,4 +20,8 @@ def posted():
     feed=models.User.query.all()
     idNum=new_post.id
 
-    return render_template("index.html", name=name, feed=feed, idNum=idNum)
+    return render_template("logged_in.html", name=name, feed=feed, idNum=idNum)
+
+@app.route('/logged_in', methods=["POST"])
+def logged_in():
+    return render_template("index.html")
