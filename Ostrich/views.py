@@ -24,6 +24,9 @@ def posted():
 
 @app.route('/logged_out')
 def logged_out():
-    feed = models.User.query.all()
     idNum = session.get('idNum', None)
+    user = models.User.query.filter_by(id=idNum).first()
+    models.db.session.delete(user)
+    models.db.session.commit()
+    feed = models.User.query.all()
     return render_template("index.html", feed=feed, idNum=idNum)
