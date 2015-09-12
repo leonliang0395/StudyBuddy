@@ -5,7 +5,8 @@ import models
 
 @app.route('/')
 def index():
-    return render_template("index.html", name="___")
+    feed=models.User.query.all()
+    return render_template("index.html", name="___", feed=feed)
 
 @app.route('/posted', methods=["GET","POST"])
 def posted():
