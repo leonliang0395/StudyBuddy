@@ -1,3 +1,3 @@
 #!flask/bin/python
-from app import app
+from Ostrich import app
 app.run(debug=True)
