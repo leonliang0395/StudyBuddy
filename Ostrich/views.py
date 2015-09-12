@@ -22,6 +22,7 @@ def posted():
 
     return render_template("logged_in.html", name=name, feed=feed, idNum=idNum)
 
-@app.route('/logged_in', methods=["POST"])
-def logged_in():
-    return render_template("index.html")
+@app.route('/logged_out')
+def logged_out():
+    feed = models.User.query.all()
+    return render_template("index.html", feed=feed)
