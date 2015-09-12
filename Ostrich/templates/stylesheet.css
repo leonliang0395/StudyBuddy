@@ -10,7 +10,7 @@ h1 {
 }
 
 body {
-
+    
     text-align: center;
     font-family: 'Roboto';
     color: #4E4F3E;
@@ -24,8 +24,4 @@ p {
 button {
     font-size: 20px;
     font-family: 'Roboto';
-}
-
-#bg {
-    position: fixed;
 }

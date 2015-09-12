@@ -17,4 +17,6 @@ def posted():
     models.db.session.add(new_post)
     models.db.session.commit()
     feed=models.User.query.all()
-    return render_template("index.html", name=name, feed=feed)
+    idNum=new_post.id
+
+    return render_template("index.html", name=name, feed=feed, idNum=idNum)
