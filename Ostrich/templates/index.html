@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{ title }} - SturdyBirdy</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
+  <link type="text/css" rel="stylesheet" href="stylesheet.css" />
+    <title>
+      {{ title }} - SturdyBirdy</title>
     <meta charset="UTF-8">
 </head>
 
 <body>
-    <div class = "header">
-        <a href="http://www.sturdybirdy.com">SturdyBirdy</a>
-    </div>
-    <h1>Hi, {{ name }}!</h1>
-    {% for post in posts %}
+    <h1>SturdyBirdy</h1>
+    <h2>Hi, {{ name }}!</h2>
+    <!--{% for post in posts %}
     <div class="header"><p>{{ post.author.nickname }} says: <b>{{ post.body }}</b></p></div>
-    {% endfor %}
+    {% endfor %}-->
      <form method="post" action="{{ url_for('posted') }}">
       <p><label>Name:</label> <input type="text" name="name"></p>
-      <p><label>Location:</label> <input type="text" name="location"></p>
+      <p><label>Building:</label> <input type="text" name="location"></p>
       <p><label>Course:</label> <input type="text" name="course"></p>
-      <h2>Optional information:</h2>
-      <p><label>Shirt:</label> <input type="text" name="shirt" ></p>
-      <p><button type="submit">Send</button></p>
+      <p><label>Shirt Color:</label> <input type="text" name="shirt"></p>
+      <!--<p><label>Shirt:</label> <input type="text" name="shirt" ></p>-->
+      <p><button type="submit">Come study with me!</button></p>
     </form>
+    <div>
+        {% for person in feed %}
+          <div> {{ person.name }} is at {{ person.location }} taking {{ person.course }} wearing {{ person.shirt }} </div>
+        {% endfor %}
+    </div>
 </body>
 </html>

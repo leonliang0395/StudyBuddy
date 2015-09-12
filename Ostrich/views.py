@@ -5,21 +5,7 @@ import models
 
 @app.route('/')
 def index():
-    user = {'name': 'Miguel'}  # fake user
-    posts = [  # fake array of posts
-        {
-            'author': {'nickname': 'John'},
-            'body': 'Beautiful day in Portland!'
-        },
-        {
-            'author': {'nickname': 'Susan'},
-            'body': 'The Avengers movie was so cool!'
-        }
-    ]
-    return render_template("index.html",
-                           title='Home',
-                           user=user,
-                           posts=posts)
+    return render_template("index.html", name="___")
 
 @app.route('/posted', methods=["GET","POST"])
 def posted():
@@ -30,4 +16,5 @@ def posted():
     new_post = models.User(name, location, course, shirt)
     models.db.session.add(new_post)
     models.db.session.commit()
-    return render_template("index.html", name=name)
+    feed=models.User.query.all()
+    return render_template("index.html", name=name, feed=feed)
