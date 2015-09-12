@@ -9,7 +9,7 @@
     <div class = "header">
         <a href="http://www.sturdybirdy.com">SturdyBirdy</a>
     </div>
-    <h1>Hi, {{ posted }}!</h1>
+    <h1>Hi, {{ name }}!</h1>
     {% for post in posts %}
     <div class="header"><p>{{ post.author.nickname }} says: <b>{{ post.body }}</b></p></div>
     {% endfor %}
@@ -18,7 +18,7 @@
       <p><label>Location:</label> <input type="text" name="location"></p>
       <p><label>Course:</label> <input type="text" name="course"></p>
       <h2>Optional information:</h2>
-      <!--<p><label>Shirt:</label> <input type="text" name="shirt" ></p>-->
+      <p><label>Shirt:</label> <input type="text" name="shirt" ></p>
       <p><button type="submit">Send</button></p>
     </form>
 </body>
