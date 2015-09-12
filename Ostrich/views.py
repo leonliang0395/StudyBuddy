@@ -1,4 +1,4 @@
-from flask import render_template, request, url_for
+from flask import render_template, request, url_for, session
 from Ostrich import app
 import models
 
@@ -18,11 +18,12 @@ def posted():
     models.db.session.add(new_post)
     models.db.session.commit()
     feed=models.User.query.all()
-    idNum=new_post.id
+    session['idNum'] = new_post.id
+    return render_template("logged_in.html", name=name, feed=feed)
 
-    return render_template("logged_in.html", name=name, feed=feed, idNum=idNum)
 
 @app.route('/logged_out')
 def logged_out():
     feed = models.User.query.all()
-    return render_template("index.html", feed=feed)
+    idNum = session.get('idNum', None)
+    return render_template("index.html", feed=feed, idNum=idNum)
