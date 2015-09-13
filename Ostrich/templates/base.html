@@ -65,7 +65,7 @@
         <div id="feed">
          {% for person in feed %}
          <div id="feedEntry">
-            {{ person.name }} is at {{ person.location }} studying {{ person.course }}, wearing a {{ person.shirt }} shirt 
+            Name : {{ person.name }} &nbsp;&nbsp;-&nbsp;&nbsp; Location : {{ person.location }} &nbsp;&nbsp;-&nbsp;&nbsp; Course : {{ person.course }} &nbsp;&nbsp;-&nbsp;&nbsp; Shirt Color : {{ person.shirt }}
             <hr>
          </div>
          {% endfor %}
