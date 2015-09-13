@@ -1,11 +1,33 @@
+<script type="text/javascript">
+//auto expand textarea
+function adjust_textarea(h) {
+    h.style.height = "20px";
+    h.style.height = (h.scrollHeight)+"px";
+}
+</script>
+
+<script src="jquery-1.11.3.min.js"></script>
+
 {% extends "base.html" %}
 {% block content %}
     <h2>WHO ARE YOU??? WHERE U AT???</h2>
-     <form method="post" action="{{ url_for('posted') }}">
-      <p><label>Name:</label> <input type="text" name="name"></p>
-      <p><label>Building:</label> <input type="text" name="location"></p>
-      <p><label>Course:</label> <input type="text" name="course"></p>
-      <p><label>Shirt Color:</label> <input type="text" name="shirt"></p>
-      <p><button type="submit">Come study with me!</button></p>
+    <div class="form-container">
+     <form class="form-style" method="post" action="{{ url_for('posted') }}">
+      <label for="field1">
+          <span>Name:</span><input type="text" name="name">
+      </label> 
+      <label for="field1">
+          <span>Location:</span><input type="text" name="location">
+      </label> 
+      <label for="field1">
+          <span>Course:</span><input type="text" name="course">
+      </label> 
+      <label for="field1">
+          <span>Shirt Color:</span><input type="text" name="shirt">
+      </label> 
+      <label>
+        <span>&nbsp;</span><input type="submit" value="Come study with me!" />
+      </label>
     </form>
+    </div>
 {% endblock %}

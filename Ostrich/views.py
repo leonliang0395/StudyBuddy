@@ -1,6 +1,6 @@
 from flask import render_template, request, url_for, session
 from Ostrich import app
-import models
+from Ostrich import models
 
 
 @app.route('/')
