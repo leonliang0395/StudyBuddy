@@ -22,6 +22,10 @@
   <body>
     <h1>SturdyBirdy</h1>
 
+    <div id="container">
+    {% block content %}{% endblock %}
+    </div>
+
     <div id="dropdown">
     <select>
       <option value="volvo">Volvo</option>
@@ -42,7 +46,7 @@
 
     <div id="wrapper">
       <div id="container">
-        {% block content %}{% endblock %}
+        
         <div id="feed">
          {% for person in feed %}
          <div id="feedEntry">
