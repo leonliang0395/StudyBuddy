@@ -32,10 +32,16 @@ def logged_out():
     feed = models.User.query.all()
     return render_template("index.html", feed=feed, idNum=idNum)
 
-@app.route('/filtered', methods=["GET", "POST"])
-def filtered():
+@app.route('/filterLocation', methods=["GET", "POST"])
+def filterLocation():
     location = request.form['location']
-    course = request.form['course']
-    filteredFeed = models.User.query.filter_by(and_(course=course, location=location)).all()
+    filteredFeed = models.User.query.filter_by(location=location).all()
     return render_template("index.html", feed=filteredFeed)
+
+@app.route('/filterCourse', methods=["GET", "POST"])
+def filterCourse():
+    course = request.form['course']
+    filteredFeed = models.User.query.filter_by(course=course).all()
+    return render_template("index.html", feed=filteredFeed)
+
 

@@ -3,6 +3,10 @@
   font-family: 'Roboto', sans-serif;
 }
 
+form .dropdown {
+  width:25%;
+}
+
 body {
   text-align: center;
   font-family: 'Roboto';
@@ -11,7 +15,7 @@ body {
   background: #495C70;
 }
 
-form {
+.form-style{
   float:left;
   padding-left:42%;
 }
@@ -58,6 +62,7 @@ hr{
 }
 
 #container {
+  display: inline-block;
   margin:auto;
   width: 75%;
   margin-left: auto;
@@ -67,14 +72,25 @@ hr{
 
 #dropdown{
 
-  display: inline-block;
+  display: inline;
   display: relative; 
   margin-top: 15%;
+  width: 150px;
+  right: 50px;
   margin-right: auto;
   margin-left:auto;
 
 }
 
+#dropdown2 {
+  display: inline;
+  display: relative; 
+  margin-top: 15%;
+  width: 150px;
+  right: 50px;
+  margin-right: auto;
+  margin-left:auto;  
+}
 
 
 #feed {
