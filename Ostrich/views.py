@@ -1,4 +1,5 @@
 from flask import render_template, request, url_for, session
+from sqlalchemy.sql import and_
 from Ostrich import app
 from Ostrich import models
 
@@ -30,3 +31,11 @@ def logged_out():
     models.db.session.commit()
     feed = models.User.query.all()
     return render_template("index.html", feed=feed, idNum=idNum)
+
+@app.route('/filtered', methods=["GET", "POST"])
+def filtered():
+    location = request.form['location']
+    course = request.form['course']
+    filteredFeed = models.User.query.filter_by(and_(course=course, location=location)).all()
+    return render_template("index.html", feed=filteredFeed)
+

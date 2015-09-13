@@ -22,8 +22,11 @@
   <body>
     <h1>SturdyBirdy</h1>
 
+    
     <div id="dropdown">
-    <select>
+    <form action="{{ url_for('filtered') }}" method="POST">
+    <select name="location">
+      <option selected="selected">Location</option>
       <option value="volvo">Volvo</option>
       <option value="saab">Saab</option>
       <option value="mercedes">Mercedes</option>
@@ -32,12 +35,17 @@
     </div>
 
     <div id="dropdown">
-    <select>
+    <select name ="course">
+      <option selected="selected">Course</option>
       <option value="volvo">Volvo</option>
       <option value="saab">Saab</option>
       <option value="mercedes">Mercedes</option>
       <option value="audi">Audi</option>
     </select>
+    <label>
+        <span>&nbsp;</span><input type="submit" value="Come study with me!" />
+    </label>
+    </form>
     </div>
 
     <div id="wrapper">
