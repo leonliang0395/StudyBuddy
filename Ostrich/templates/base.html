@@ -7,7 +7,7 @@
       function ()
       {
         $('#wrapper').load('base.html');
-      }, 15000); // refresh every 10000 milliseconds
+      }, 15000); // refresh every 15000 milliseconds
 
 
   </script>
@@ -21,15 +21,37 @@
 
   <body>
     <h1>SturdyBirdy</h1>
+
+    <div id="dropdown">
+    <select>
+      <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="mercedes">Mercedes</option>
+      <option value="audi">Audi</option>
+    </select>
+    </div>
+
+    <div id="dropdown">
+    <select>
+      <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="mercedes">Mercedes</option>
+      <option value="audi">Audi</option>
+    </select>
+    </div>
+
     <div id="wrapper">
-    <div id="container">
-      {% block content %}{% endblock %}
-      <div id="feed">
-       {% for person in feed %}
-       <div id="feedEntry">{{ person.name }} is at {{ person.location }} studying {{ person.course }}, wearing a {{ person.shirt }} shirt </div>
-       {% endfor %}
-     </div>
-   </div>
+      <div id="container">
+        {% block content %}{% endblock %}
+        <div id="feed">
+         {% for person in feed %}
+         <div id="feedEntry">
+            {{ person.name }} is at {{ person.location }} studying {{ person.course }}, wearing a {{ person.shirt }} shirt 
+            <hr>
+         </div>
+         {% endfor %}
+       </div>
+    </div>
    </div>
  </body>
  </html>

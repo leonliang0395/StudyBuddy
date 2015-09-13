@@ -21,6 +21,7 @@ h1 {
   color: #495C70;
   font-style: bold;
   background-color: white;
+  margin-top: 0px;
 }
 
 p {
@@ -38,31 +39,37 @@ button {
 
 #container {
   margin:auto;
-  width: 700px;
+  width: 75%;
   margin-left: auto;
   margin-right:auto;
+  text-align: center;
 }
 
-
+#dropdown{
+  margin-top: 30%;
+  display: inline-block; 
+}
 
 #feed {
   overflow:hidden;
   text-align: center;
   width: 100%;
   height:800px;
+  top: 15%;
+  margin-top: 300px;
 }
 
 #feedEntry {
   vertical-align:middle;
-  float: left;
   color: white;
+  text-align: center;
 }
 
 .form-container{
   position: fixed; /* or absolute */
-  top: 50%;
+  top: 15%;
   left: 50%;
-  margin-top: -117px;
+  margin-top: 0px;
   margin-left: -260px;
 }
 
