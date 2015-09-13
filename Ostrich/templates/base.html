@@ -25,7 +25,6 @@
        {% block content %}{% endblock %}
     </div>
 
-    
     <div id="dropdown">
     <form action="{{ url_for('filtered') }}" method="POST">
     <select name="location">
@@ -53,6 +52,7 @@
 
     <div id="wrapper">
       <div id="container">
+
         <div id="feed">
          {% for person in feed %}
          <div id="feedEntry">
